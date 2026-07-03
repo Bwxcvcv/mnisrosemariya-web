@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Profile</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'VT323',monospace;
+    background:#000814;
+    color:#00ff88;
+    overflow-x:hidden;
+}
+
+.scanlines{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.04),
+        rgba(255,255,255,.04) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    animation:flicker .15s infinite;
+}
+
+@keyframes flicker{
+    0%{opacity:.15;}
+    50%{opacity:.08;}
+    100%{opacity:.15;}
+}
+
+.glow{
+    text-shadow:
+    0 0 5px #00ff88,
+    0 0 10px #00ff88,
+    0 0 20px #00ff88;
+}
+
+.card{
+    background:rgba(0,0,0,.65);
+    border:2px solid #00ff88;
+    box-shadow:0 0 20px #00ff88;
+}
+
+.blink{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+.grid-bg{
+background-image:
+linear-gradient(rgba(0,255,136,.15) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,255,136,.15) 1px, transparent 1px);
+background-size:30px 30px;
+}
+
+.pixel{
+font-family:'Press Start 2P',cursive;
+}
+
+button:hover{
+transform:scale(1.05);
+transition:.2s;
+}
+</style>
+
+</head>
+
+<body class="grid-bg">
+
+<div class="scanlines"></div>
+
+<marquee class="bg-green-500 text-black py-2 pixel">
+★ Welcome To My Retro Website ★ Thanks For Visiting ★
+</marquee>
+
+<div class="max-w-4xl mx-auto p-6">
+
+<div class="text-center mt-8">
+
+<div class="w-40 h-40 mx-auto rounded-full border-4 border-green-400 flex items-center justify-center text-6xl bg-black">
+👾
+</div>
+
+<h1 class="pixel text-3xl glow mt-6">
+YOUR NAME
+</h1>
+
+<p class="text-2xl mt-3 blink">
+&gt; Student_
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-6 mt-10">
+
+<div class="card p-6 rounded-lg">
+<h2 class="pixel text-xl mb-4 glow">
+ABOUT
+</h2>
+
+<p class="text-2xl">
+🏫 College:
+<br>
+Your College
+</p>
+
+<br>
+
+<p class="text-2xl">
+🎓 Degree:
+<br>
+Your Degree
+</p>
+
+</div>
+
+<div class="card p-6 rounded-lg">
+
+<h2 class="pixel text-xl mb-4 glow">
+SKILLS
+</h2>
+
+<ul class="text-2xl list-disc pl-6 space-y-2">
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>C</li>
+<li>Tailwind CSS</li>
+</ul>
+
+</div>
+
+<div class="card p-6 rounded-lg md:col-span-2">
+
+<h2 class="pixel text-xl mb-4 glow">
+HOBBIES
+</h2>
+
+<div class="flex flex-wrap gap-4 text-2xl">
+
+<span>🎮 Gaming</span>
+<span>💻 Coding</span>
+<span>🎵 Music</span>
+<span>📚 Reading</span>
+<span>🎬 Movies</span>
+
+</div>
+
+</div>
+
+<div class="card p-6 rounded-lg md:col-span-2">
+
+<h2 class="pixel text-xl mb-4 glow">
+SYSTEM STATUS
+</h2>
+
+<p class="text-2xl">
+✔ HTML ............. ONLINE
+</p>
+
+<p class="text-2xl">
+✔ CSS .............. ONLINE
+</p>
+
+<p class="text-2xl">
+✔ JavaScript ....... ONLINE
+</p>
+
+<p class="text-2xl">
+✔ Learning ......... 100%
+</p>
+
+</div>
+
+</div>
+
+<div class="text-center mt-10">
+
+<button class="bg-green-400 text-black px-8 py-3 rounded pixel">
+CONTACT ME
+</button>
+
+</div>
+
+<div class="text-center mt-10 text-xl">
+
+<p class="blink">
+Visitor Counter:
+<span id="counter"></span>
+</p>
+
+<p class="mt-4">
+© 2026 YOUR NAME
+</p>
+
+</div>
+
+</div>
+
+<script>
+document.getElementById("counter").textContent =
+Math.floor(Math.random()*9000)+1000;
+</script>
+
+</body>
+</html>
